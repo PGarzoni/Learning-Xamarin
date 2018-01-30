@@ -1,5 +1,4 @@
 ﻿using Android.App;
-using Android.Widget;
 using Android.OS;
 
 namespace HelloWorld
@@ -13,7 +12,14 @@ namespace HelloWorld
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+
+            Android.Widget.Button FirstPageBtn = FindViewById<Android.Widget.Button>(Resource.Id.helloViewBtn);
+            FirstPageBtn.Click += delegate
+            {
+                SetContentView(Resource.Layout.FirstPage); // <-- Worked... in a way
+            };
         }
     }
 }
 
+    
