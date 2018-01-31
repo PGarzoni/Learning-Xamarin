@@ -1,0 +1,5 @@
+Tutorial followed: https://developer.xamarin.com/guides/android/getting_started/hello,android_multiscreen/hello,android_multiscreen_quickstart/
+
+Issues: Only major issue ran into was a solution needing to be cleaned to correctly build without failing. 
+
+Comment about the tutorial: Some of the coding used within the tutorial does not give much insight of what is really going on. So attempting to rewrite the code to gain a better understanding was difficult given my current level of expertise.
