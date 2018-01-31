@@ -25,8 +25,9 @@ namespace HelloWorld
             Button Home = FindViewById<Button>(Resource.Id.HomeBtn);
             Home.Click += delegate
             {
-                var intent = new Intent(this, typeof(MainActivity));
-                StartActivity(intent);
+                StartActivity(new Intent(this, typeof(MainActivity)));
+                OverridePendingTransition(Resource.Animation.design_snackbar_in, Resource.Animation.design_snackbar_out);
+                this.Finish(); // <-- kills FirstPage activity
             };
         }
     }

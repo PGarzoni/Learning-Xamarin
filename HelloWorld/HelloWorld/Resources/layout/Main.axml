@@ -7,9 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editText1"
-        android:text="Main"
-        android:textStyle="bold"
-        android:typeface="normal"
+        android:text="Home"
         android:gravity="center_horizontal" />
     <Button
         android:text="First Page"

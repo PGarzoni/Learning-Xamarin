@@ -18,8 +18,9 @@ namespace HelloWorld
             Button FirstPageBtn = FindViewById<Button>(Resource.Id.FirstPageBtn);
             FirstPageBtn.Click += delegate
             {
-                var intent = new Intent(this, typeof(FirstPage));
-                StartActivity(intent);
+                StartActivity(new Intent(this, typeof(FirstPage)));
+                OverridePendingTransition(Resource.Animation.abc_popup_enter, Resource.Animation.abc_popup_exit);
+                this.Finish(); // <-- kills MainActivity activity
             };
         }
     }

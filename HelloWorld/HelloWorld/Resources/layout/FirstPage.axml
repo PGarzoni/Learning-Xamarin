@@ -6,8 +6,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText1"
-        android:text="You reached the First Page! WOO!"
+        android:id="@+id/editText2"
+        android:text="First Page"
         android:gravity="center_horizontal" />
     <Button
         android:text="Home"
