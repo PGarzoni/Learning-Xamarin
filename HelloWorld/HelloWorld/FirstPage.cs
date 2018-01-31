@@ -3,19 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Xamarin.Forms;
+using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
 
 namespace HelloWorld
 {
-    public class FirstPage : ContentPage
+    [Activity(Label = "FirstPage")]
+    public class FirstPage : Activity
     {
-        public FirstPage()
+        protected override void OnCreate(Bundle savedInstanceState)
         {
-            Content = new StackLayout
+            base.OnCreate(savedInstanceState);
+
+            // Create your application here
+            SetContentView(Resource.Layout.FirstPage);
+
+            Button Home = FindViewById<Button>(Resource.Id.HomeBtn);
+            Home.Click += delegate
             {
-                Children = {
-                    new Label { Text = "Welcome to Xamarin.Forms!" }
-                }
+                var intent = new Intent(this, typeof(MainActivity));
+                StartActivity(intent);
             };
         }
     }

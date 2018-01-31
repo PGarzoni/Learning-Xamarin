@@ -2778,6 +2778,12 @@ namespace HelloWorld
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f080083
+			public const int FirstPageBtn = 2131230851;
+			
+			// aapt resource value: 0x7f080082
+			public const int HomeBtn = 2131230850;
+			
 			// aapt resource value: 0x7f0800a1
 			public const int action0 = 2131230881;
 			
@@ -2967,17 +2973,11 @@ namespace HelloWorld
 			// aapt resource value: 0x7f08003f
 			public const int @fixed = 2131230783;
 			
-			// aapt resource value: 0x7f080083
-			public const int helloViewBtn = 2131230851;
-			
 			// aapt resource value: 0x7f080005
 			public const int home = 2131230725;
 			
 			// aapt resource value: 0x7f080013
 			public const int homeAsUp = 2131230739;
-			
-			// aapt resource value: 0x7f080082
-			public const int homePageBtn = 2131230850;
 			
 			// aapt resource value: 0x7f080049
 			public const int icon = 2131230793;

@@ -10,8 +10,8 @@
         android:text="You reached the First Page! WOO!"
         android:gravity="center_horizontal" />
     <Button
-        android:text="Go Back to Home"
+        android:text="Home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/homePageBtn" />
+        android:id="@+id/HomeBtn" />
 </LinearLayout>
