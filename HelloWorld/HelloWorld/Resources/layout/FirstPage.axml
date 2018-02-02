@@ -6,12 +6,12 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText1"
-        android:text="Home"
+        android:id="@+id/editText2"
+        android:text="First Page"
         android:gravity="center_horizontal" />
     <Button
-        android:text="First Page"
+        android:text="Home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/FirstPageBtn" />
+        android:id="@+id/HomeBtn" />
 </LinearLayout>
