@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("MenuSystem.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("BasicMathGame.Resource", IsApplication=true)]
 
-namespace MenuSystem
+namespace BasicMathGame
 {
 	
 	
@@ -26,7 +26,7 @@ namespace MenuSystem
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::MenuSystem.Resource.Attribute.actionBarSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::BasicMathGame.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation
@@ -2841,6 +2841,9 @@ namespace MenuSystem
 			// aapt resource value: 0x7f09001e
 			public const int add = 2131296286;
 			
+			// aapt resource value: 0x7f090083
+			public const int additionBtn = 2131296387;
+			
 			// aapt resource value: 0x7f090058
 			public const int alertTitle = 2131296344;
 			
@@ -2852,9 +2855,6 @@ namespace MenuSystem
 			
 			// aapt resource value: 0x7f09002f
 			public const int auto = 2131296303;
-			
-			// aapt resource value: 0x7f090081
-			public const int beginnerBtn = 2131296385;
 			
 			// aapt resource value: 0x7f090020
 			public const int beginning = 2131296288;
@@ -2931,6 +2931,9 @@ namespace MenuSystem
 			// aapt resource value: 0x7f090012
 			public const int disableHome = 2131296274;
 			
+			// aapt resource value: 0x7f090086
+			public const int divisionBtn = 2131296390;
+			
 			// aapt resource value: 0x7f090066
 			public const int edit_query = 2131296358;
 			
@@ -2954,9 +2957,6 @@ namespace MenuSystem
 			
 			// aapt resource value: 0x7f09005a
 			public const int expanded_menu = 2131296346;
-			
-			// aapt resource value: 0x7f090083
-			public const int expertBtn = 2131296387;
 			
 			// aapt resource value: 0x7f09003b
 			public const int fill = 2131296315;
@@ -2991,9 +2991,6 @@ namespace MenuSystem
 			// aapt resource value: 0x7f0900ae
 			public const int info = 2131296430;
 			
-			// aapt resource value: 0x7f090082
-			public const int intermediateBtn = 2131296386;
-			
 			// aapt resource value: 0x7f090000
 			public const int item_touch_helper_previous_elevation = 2131296256;
 			
@@ -3015,11 +3012,11 @@ namespace MenuSystem
 			// aapt resource value: 0x7f090048
 			public const int list_item = 2131296328;
 			
-			// aapt resource value: 0x7f090085
-			public const int loadgameBtn = 2131296389;
-			
 			// aapt resource value: 0x7f0900b9
 			public const int masked = 2131296441;
+			
+			// aapt resource value: 0x7f090081
+			public const int mathSelectBtn = 2131296385;
 			
 			// aapt resource value: 0x7f0900a7
 			public const int media_actions = 2131296423;
@@ -3105,6 +3102,9 @@ namespace MenuSystem
 			// aapt resource value: 0x7f09009b
 			public const int mr_volume_slider = 2131296411;
 			
+			// aapt resource value: 0x7f090085
+			public const int multiplicationBtn = 2131296389;
+			
 			// aapt resource value: 0x7f090019
 			public const int multiply = 2131296281;
 			
@@ -3113,9 +3113,6 @@ namespace MenuSystem
 			
 			// aapt resource value: 0x7f090026
 			public const int never = 2131296294;
-			
-			// aapt resource value: 0x7f090084
-			public const int newgameBtn = 2131296388;
 			
 			// aapt resource value: 0x7f090014
 			public const int none = 2131296276;
@@ -3159,8 +3156,8 @@ namespace MenuSystem
 			// aapt resource value: 0x7f0900ab
 			public const int right_side = 2131296427;
 			
-			// aapt resource value: 0x7f090086
-			public const int scoreboardBtn = 2131296390;
+			// aapt resource value: 0x7f090082
+			public const int scoreboardBtn = 2131296386;
 			
 			// aapt resource value: 0x7f09001a
 			public const int screen = 2131296282;
@@ -3263,6 +3260,9 @@ namespace MenuSystem
 			
 			// aapt resource value: 0x7f09006f
 			public const int submit_area = 2131296367;
+			
+			// aapt resource value: 0x7f090084
+			public const int subtractionBtn = 2131296388;
 			
 			// aapt resource value: 0x7f090011
 			public const int tabMode = 2131296273;
@@ -3541,10 +3541,10 @@ namespace MenuSystem
 			public const int design_text_input_password_icon = 2130968616;
 			
 			// aapt resource value: 0x7f040029
-			public const int DifficultySelection = 2130968617;
+			public const int MainMenu = 2130968617;
 			
 			// aapt resource value: 0x7f04002a
-			public const int MainMenu = 2130968618;
+			public const int MathSelectionMenu = 2130968618;
 			
 			// aapt resource value: 0x7f04002b
 			public const int mr_chooser_dialog = 2130968619;

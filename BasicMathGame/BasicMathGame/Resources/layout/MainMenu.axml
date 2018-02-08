@@ -16,18 +16,11 @@
     <Space
         android:layout_height="50dp" />
     <Button
-        android:text="New Game"
+        android:text="Math Select"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:id="@+id/newgameBtn" />
-    <Button
-        android:text="Load Game"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:id="@+id/loadgameBtn"
-        android:enabled="false" />
+        android:id="@+id/mathSelectBtn" />
     <Button
         android:text="Scoreboard"
         android:layout_width="200dp"
