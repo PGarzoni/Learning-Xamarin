@@ -2,13 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:minWidth="25px"
-    android:minHeight="25px">
+    android:layout_height="match_parent">
     <Space
         android:layout_height="25dp" />
     <TextView
-        android:text="Main Menu"
+        android:text="Select Difficulty"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,22 +14,24 @@
     <Space
         android:layout_height="50dp" />
     <Button
-        android:text="New Game"
+        android:text="Beginner"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:id="@+id/newgameBtn" />
-    <Button
-        android:text="Load Game"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:id="@+id/loadgameBtn"
+        android:id="@+id/beginnerBtn"
         android:enabled="false" />
     <Button
-        android:text="Scoreboard"
+        android:text="Intermediate"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:id="@+id/scoreboardBtn" />
+        android:id="@+id/intermediateBtn"
+        android:enabled="false" />
+    <Button
+        android:text="Expert"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:id="@+id/expertBtn"
+        android:enabled="false" />
 </LinearLayout>

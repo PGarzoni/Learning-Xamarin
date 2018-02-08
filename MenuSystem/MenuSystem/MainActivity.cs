@@ -1,10 +1,11 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using Android.Content;
 
 namespace MenuSystem
 {
-    [Activity(Label = "MenuSystem", MainLauncher = true, Icon = "@mipmap/icon")]
+    [Activity(Label = "Menu System Demo", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -12,13 +13,20 @@ namespace MenuSystem
             base.OnCreate(savedInstanceState);
 
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.Main);
+            SetContentView(Resource.Layout.MainMenu);
 
-            // Get our button from the layout resource,
-            // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.myButton);
+            // buttons
+            Button NewGame = FindViewById<Button>(Resource.Id.newgameBtn);
+            Button LoadGame = FindViewById<Button>(Resource.Id.loadgameBtn);
+            Button ScoreBoard = FindViewById<Button>(Resource.Id.scoreboardBtn);
 
-            button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+            //button clicks
+            NewGame.Click += delegate
+            {
+                StartActivity(new Intent(this, typeof(DifficultySelection)));
+                OverridePendingTransition(Resource.Animation.abc_popup_enter, Resource.Animation.abc_popup_exit);
+                this.Finish(); // <-- kills MainActivity activity
+            };
         }
     }
 }
