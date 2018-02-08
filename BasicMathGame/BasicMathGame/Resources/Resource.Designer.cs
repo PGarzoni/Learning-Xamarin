@@ -2853,8 +2853,8 @@ namespace BasicMathGame
 			// aapt resource value: 0x7f090023
 			public const int always = 2131296291;
 			
-			// aapt resource value: 0x7f090076
-			public const int answerBtn = 2131296374;
+			// aapt resource value: 0x7f090084
+			public const int answerBtn = 2131296388;
 			
 			// aapt resource value: 0x7f09002f
 			public const int auto = 2131296303;
@@ -2895,14 +2895,14 @@ namespace BasicMathGame
 			// aapt resource value: 0x7f090024
 			public const int collapseActionView = 2131296292;
 			
-			// aapt resource value: 0x7f090079
-			public const int container = 2131296377;
+			// aapt resource value: 0x7f090075
+			public const int container = 2131296373;
 			
 			// aapt resource value: 0x7f09004e
 			public const int contentPanel = 2131296334;
 			
-			// aapt resource value: 0x7f09007a
-			public const int coordinator = 2131296378;
+			// aapt resource value: 0x7f090076
+			public const int coordinator = 2131296374;
 			
 			// aapt resource value: 0x7f090055
 			public const int custom = 2131296341;
@@ -2916,20 +2916,20 @@ namespace BasicMathGame
 			// aapt resource value: 0x7f090047
 			public const int default_activity_button = 2131296327;
 			
+			// aapt resource value: 0x7f090078
+			public const int design_bottom_sheet = 2131296376;
+			
+			// aapt resource value: 0x7f09007f
+			public const int design_menu_item_action_area = 2131296383;
+			
+			// aapt resource value: 0x7f09007e
+			public const int design_menu_item_action_area_stub = 2131296382;
+			
+			// aapt resource value: 0x7f09007d
+			public const int design_menu_item_text = 2131296381;
+			
 			// aapt resource value: 0x7f09007c
-			public const int design_bottom_sheet = 2131296380;
-			
-			// aapt resource value: 0x7f090083
-			public const int design_menu_item_action_area = 2131296387;
-			
-			// aapt resource value: 0x7f090082
-			public const int design_menu_item_action_area_stub = 2131296386;
-			
-			// aapt resource value: 0x7f090081
-			public const int design_menu_item_text = 2131296385;
-			
-			// aapt resource value: 0x7f090080
-			public const int design_navigation_view = 2131296384;
+			public const int design_navigation_view = 2131296380;
 			
 			// aapt resource value: 0x7f090012
 			public const int disableHome = 2131296274;
@@ -2997,8 +2997,8 @@ namespace BasicMathGame
 			// aapt resource value: 0x7f090000
 			public const int item_touch_helper_previous_elevation = 2131296256;
 			
-			// aapt resource value: 0x7f090078
-			public const int largeLabel = 2131296376;
+			// aapt resource value: 0x7f090074
+			public const int largeLabel = 2131296372;
 			
 			// aapt resource value: 0x7f090034
 			public const int left = 2131296308;
@@ -3018,11 +3018,11 @@ namespace BasicMathGame
 			// aapt resource value: 0x7f0900bd
 			public const int masked = 2131296445;
 			
-			// aapt resource value: 0x7f090075
-			public const int mathAnswer = 2131296373;
+			// aapt resource value: 0x7f090083
+			public const int mathAnswer = 2131296387;
 			
-			// aapt resource value: 0x7f090074
-			public const int mathQuestion = 2131296372;
+			// aapt resource value: 0x7f090082
+			public const int mathQuestion = 2131296386;
 			
 			// aapt resource value: 0x7f090085
 			public const int mathSelectBtn = 2131296389;
@@ -3117,8 +3117,8 @@ namespace BasicMathGame
 			// aapt resource value: 0x7f090019
 			public const int multiply = 2131296281;
 			
-			// aapt resource value: 0x7f09007f
-			public const int navigation_header_container = 2131296383;
+			// aapt resource value: 0x7f09007b
+			public const int navigation_header_container = 2131296379;
 			
 			// aapt resource value: 0x7f090026
 			public const int never = 2131296294;
@@ -3165,8 +3165,8 @@ namespace BasicMathGame
 			// aapt resource value: 0x7f0900af
 			public const int right_side = 2131296431;
 			
-			// aapt resource value: 0x7f090073
-			public const int scoreCounter = 2131296371;
+			// aapt resource value: 0x7f090081
+			public const int scoreCounter = 2131296385;
 			
 			// aapt resource value: 0x7f090086
 			public const int scoreboardBtn = 2131296390;
@@ -3234,14 +3234,14 @@ namespace BasicMathGame
 			// aapt resource value: 0x7f090017
 			public const int showTitle = 2131296279;
 			
-			// aapt resource value: 0x7f090077
-			public const int smallLabel = 2131296375;
+			// aapt resource value: 0x7f090073
+			public const int smallLabel = 2131296371;
 			
-			// aapt resource value: 0x7f09007e
-			public const int snackbar_action = 2131296382;
+			// aapt resource value: 0x7f09007a
+			public const int snackbar_action = 2131296378;
 			
-			// aapt resource value: 0x7f09007d
-			public const int snackbar_text = 2131296381;
+			// aapt resource value: 0x7f090079
+			public const int snackbar_text = 2131296377;
 			
 			// aapt resource value: 0x7f09002e
 			public const int snap = 2131296302;
@@ -3291,8 +3291,8 @@ namespace BasicMathGame
 			// aapt resource value: 0x7f090051
 			public const int textSpacerNoTitle = 2131296337;
 			
-			// aapt resource value: 0x7f090084
-			public const int text_input_password_toggle = 2131296388;
+			// aapt resource value: 0x7f090080
+			public const int text_input_password_toggle = 2131296384;
 			
 			// aapt resource value: 0x7f09000c
 			public const int textinput_counter = 2131296268;
@@ -3318,8 +3318,8 @@ namespace BasicMathGame
 			// aapt resource value: 0x7f090056
 			public const int topPanel = 2131296342;
 			
-			// aapt resource value: 0x7f09007b
-			public const int touch_outside = 2131296379;
+			// aapt resource value: 0x7f090077
+			public const int touch_outside = 2131296375;
 			
 			// aapt resource value: 0x7f09000a
 			public const int transition_current_scene = 2131296266;
@@ -3511,49 +3511,49 @@ namespace BasicMathGame
 			public const int abc_select_dialog_material = 2130968602;
 			
 			// aapt resource value: 0x7f04001b
-			public const int AdditionGame = 2130968603;
+			public const int design_bottom_navigation_item = 2130968603;
 			
 			// aapt resource value: 0x7f04001c
-			public const int design_bottom_navigation_item = 2130968604;
+			public const int design_bottom_sheet_dialog = 2130968604;
 			
 			// aapt resource value: 0x7f04001d
-			public const int design_bottom_sheet_dialog = 2130968605;
+			public const int design_layout_snackbar = 2130968605;
 			
 			// aapt resource value: 0x7f04001e
-			public const int design_layout_snackbar = 2130968606;
+			public const int design_layout_snackbar_include = 2130968606;
 			
 			// aapt resource value: 0x7f04001f
-			public const int design_layout_snackbar_include = 2130968607;
+			public const int design_layout_tab_icon = 2130968607;
 			
 			// aapt resource value: 0x7f040020
-			public const int design_layout_tab_icon = 2130968608;
+			public const int design_layout_tab_text = 2130968608;
 			
 			// aapt resource value: 0x7f040021
-			public const int design_layout_tab_text = 2130968609;
+			public const int design_menu_item_action_area = 2130968609;
 			
 			// aapt resource value: 0x7f040022
-			public const int design_menu_item_action_area = 2130968610;
+			public const int design_navigation_item = 2130968610;
 			
 			// aapt resource value: 0x7f040023
-			public const int design_navigation_item = 2130968611;
+			public const int design_navigation_item_header = 2130968611;
 			
 			// aapt resource value: 0x7f040024
-			public const int design_navigation_item_header = 2130968612;
+			public const int design_navigation_item_separator = 2130968612;
 			
 			// aapt resource value: 0x7f040025
-			public const int design_navigation_item_separator = 2130968613;
+			public const int design_navigation_item_subheader = 2130968613;
 			
 			// aapt resource value: 0x7f040026
-			public const int design_navigation_item_subheader = 2130968614;
+			public const int design_navigation_menu = 2130968614;
 			
 			// aapt resource value: 0x7f040027
-			public const int design_navigation_menu = 2130968615;
+			public const int design_navigation_menu_item = 2130968615;
 			
 			// aapt resource value: 0x7f040028
-			public const int design_navigation_menu_item = 2130968616;
+			public const int design_text_input_password_icon = 2130968616;
 			
 			// aapt resource value: 0x7f040029
-			public const int design_text_input_password_icon = 2130968617;
+			public const int GameBoard = 2130968617;
 			
 			// aapt resource value: 0x7f04002a
 			public const int MainMenu = 2130968618;

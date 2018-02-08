@@ -29,9 +29,38 @@ namespace BasicMathGame
             //button clicks
             Addition.Click += delegate
             {
-                StartActivity(new Intent(this, typeof(AdditionActivity)));
+                var intent = new Intent(this, typeof(GameActivity));
+                intent.PutExtra("MathType", MathType.Add.ToString());
+                StartActivity(intent);
                 OverridePendingTransition(Resource.Animation.design_snackbar_in, Resource.Animation.design_snackbar_out);
-                this.Finish(); // <-- kills MainActivity activity
+                //this.Finish(); // <-- kills MainActivity activity
+            };
+
+            Subtraction.Click += delegate
+            {
+                var intent = new Intent(this, typeof(GameActivity));
+                intent.PutExtra("MathType", MathType.Sub.ToString());
+                StartActivity(intent);
+                OverridePendingTransition(Resource.Animation.design_snackbar_in, Resource.Animation.design_snackbar_out);
+                //this.Finish(); // <-- kills MainActivity activity
+            };
+
+            Multiplication.Click += delegate
+            {
+                var intent = new Intent(this, typeof(GameActivity));
+                intent.PutExtra("MathType", MathType.Mul.ToString());
+                StartActivity(intent);
+                OverridePendingTransition(Resource.Animation.design_snackbar_in, Resource.Animation.design_snackbar_out);
+                //this.Finish(); // <-- kills MainActivity activity
+            };
+
+            Division.Click += delegate
+            {
+                var intent = new Intent(this, typeof(GameActivity));
+                intent.PutExtra("MathType", MathType.Div.ToString());
+                StartActivity(intent);
+                OverridePendingTransition(Resource.Animation.design_snackbar_in, Resource.Animation.design_snackbar_out);
+                //this.Finish(); // <-- kills MainActivity activity
             };
         }
     }
