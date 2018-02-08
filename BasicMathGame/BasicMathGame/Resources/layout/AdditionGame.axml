@@ -14,7 +14,17 @@
         android:gravity="center" />
     <Space
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="25dp" />
+    <TextView
+        android:text="Score: 0"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/scoreCounter" />
+    <Space
+      android:layout_width="match_parent"
+      android:layout_height="25dp" />
     <TextView
         android:text="x + y = ?"
         android:textAppearance="?android:attr/textAppearanceLarge"

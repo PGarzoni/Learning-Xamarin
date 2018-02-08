@@ -3,49 +3,44 @@ using System.Collections.Generic;
 
 namespace BasicMathGame
 {
-    public enum MathMode { Add, Sub, Mul, Div };
+    public enum MathType { Add, Sub, Mul, Div };
     public class MathGame
     {
-        private MathMode mathMode;
+        private MathType mathMode;
+        public int X { get; private set; }
+        public int Y { get; private set; }
+        public int Answer { get; private set; }
 
-        public MathGame(MathMode mathMode)
+        public MathGame(MathType mathMode)
         {
             this.mathMode = mathMode;
+            GenerateMathProblem();
         }
 
-        public List<int> GenerateMathProblem()
+        public void GenerateMathProblem()
         {
-            List<int> list = new List<int>();
             Random rand = new Random();
-            int x = rand.Next() % 10;
-            int y = rand.Next() % 10;
-
-            if (mathMode.Equals(MathMode.Div))
-            {
-                while (y < 0)
-                    y = rand.Next() % 10;
-                x = x * y; // this ensures the answer is a whole number
-            }
-
-            list.Add(x);
-            list.Add(y);
+            X = rand.Next() % 10;
+            Y = rand.Next() % 10;
 
             switch (mathMode)
             {
-                case MathMode.Add:
-                    list.Add(x + y);
+                case MathType.Add:
+                    Answer = X + Y;
                     break;
-                case MathMode.Sub:
-                    list.Add(x - y);
+                case MathType.Sub:
+                    Answer = X - Y;
                     break;
-                case MathMode.Mul:
-                    list.Add(x * y);
+                case MathType.Mul:
+                    Answer = X* Y;
                     break;
-                case MathMode.Div:
-                    list.Add(x / y);
+                case MathType.Div:
+                    while (Y < 0)
+                        Y = rand.Next() % 10;
+                    Answer = X;
+                    X = X * Y;
                     break;
             }
-            return list;
         }
     }
 }
