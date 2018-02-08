@@ -136,6 +136,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdditionActivity.cs" />
+    <Compile Include="MathGame.cs" />
     <Compile Include="MathSelectionMenu.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -151,6 +153,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\MathSelectionMenu.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\AdditionGame.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

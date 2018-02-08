@@ -5,7 +5,7 @@ using Android.Content;
 
 namespace BasicMathGame
 {
-    [Activity(Label = "Menu System Demo", MainLauncher = true, Icon = "@mipmap/icon")]
+    [Activity(Label = "Math Game", MainLauncher = true)]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

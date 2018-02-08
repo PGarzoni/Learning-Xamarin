@@ -29,7 +29,7 @@ namespace BasicMathGame
             //button clicks
             Addition.Click += delegate
             {
-                StartActivity(new Intent(this, typeof(MathSelectionMenu)));
+                StartActivity(new Intent(this, typeof(AdditionActivity)));
                 OverridePendingTransition(Resource.Animation.design_snackbar_in, Resource.Animation.design_snackbar_out);
                 this.Finish(); // <-- kills MainActivity activity
             };
