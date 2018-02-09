@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
 
 namespace BasicMathGame
 {
@@ -26,41 +27,36 @@ namespace BasicMathGame
             Button Multiplication = FindViewById<Button>(Resource.Id.multiplicationBtn);
             Button Division = FindViewById<Button>(Resource.Id.divisionBtn);
 
-            //button clicks
             Addition.Click += delegate
             {
                 var intent = new Intent(this, typeof(GameActivity));
-                intent.PutExtra("MathType", MathType.Add.ToString());
+                intent.PutExtra("MathType", JsonConvert.SerializeObject(MathType.Add));
                 StartActivity(intent);
                 OverridePendingTransition(Resource.Animation.design_snackbar_in, Resource.Animation.design_snackbar_out);
-                //this.Finish(); // <-- kills MainActivity activity
             };
 
             Subtraction.Click += delegate
             {
                 var intent = new Intent(this, typeof(GameActivity));
-                intent.PutExtra("MathType", MathType.Sub.ToString());
+                intent.PutExtra("MathType", JsonConvert.SerializeObject(MathType.Sub));
                 StartActivity(intent);
                 OverridePendingTransition(Resource.Animation.design_snackbar_in, Resource.Animation.design_snackbar_out);
-                //this.Finish(); // <-- kills MainActivity activity
             };
 
             Multiplication.Click += delegate
             {
                 var intent = new Intent(this, typeof(GameActivity));
-                intent.PutExtra("MathType", MathType.Mul.ToString());
+                intent.PutExtra("MathType", JsonConvert.SerializeObject(MathType.Mul));
                 StartActivity(intent);
                 OverridePendingTransition(Resource.Animation.design_snackbar_in, Resource.Animation.design_snackbar_out);
-                //this.Finish(); // <-- kills MainActivity activity
             };
 
             Division.Click += delegate
             {
                 var intent = new Intent(this, typeof(GameActivity));
-                intent.PutExtra("MathType", MathType.Div.ToString());
+                intent.PutExtra("MathType", JsonConvert.SerializeObject(MathType.Div));
                 StartActivity(intent);
                 OverridePendingTransition(Resource.Animation.design_snackbar_in, Resource.Animation.design_snackbar_out);
-                //this.Finish(); // <-- kills MainActivity activity
             };
         }
     }

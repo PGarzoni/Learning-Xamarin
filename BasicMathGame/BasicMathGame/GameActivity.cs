@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
 
 namespace BasicMathGame
 {
@@ -21,8 +22,7 @@ namespace BasicMathGame
 
             SetContentView(Resource.Layout.GameBoard);
 
-            string data = Intent.GetStringExtra("MathType") ?? "Data not available";
-            MathType mathType = ParseToEnum(data);
+            var mathType = JsonConvert.DeserializeObject<MathType>(Intent.GetStringExtra("MathType"));
 
             //initialize game
             MathGame mathGame = new MathGame(mathType);

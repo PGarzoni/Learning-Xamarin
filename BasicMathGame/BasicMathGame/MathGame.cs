@@ -49,7 +49,7 @@ namespace BasicMathGame
                     MathTitle = "Multiplication";
                     break;
                 case MathType.Div:
-                    while (Y < 0)
+                    while (Y <= 0)
                         Y = rand.Next() % 10;
                     Answer = X;
                     X = X * Y;
