@@ -36,8 +36,8 @@ namespace BasicMathGame
                     if(X < Y)
                     {
                         int T = X;
-                        Y = X;
-                        X = T;
+                        X = Y;
+                        Y = T;
                     }
                     Answer = X - Y;
                     Symbol = '-';
