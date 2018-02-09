@@ -58,22 +58,5 @@ namespace BasicMathGame
                 }
             };
         }
-
-        public MathType ParseToEnum(string str)
-        {
-            switch (str)
-            {
-                case "Add":
-                    return MathType.Add;
-                case "Sub":
-                    return MathType.Sub;
-                case "Mul":
-                    return MathType.Mul;
-                case "Div":
-                    return MathType.Div;
-                default:
-                    return MathType.Add;
-            }
-        }
     }
 }
