@@ -45,9 +45,10 @@ namespace TicTacToe
             };
             InitializeBoard(board);
 
-            //initialize current player text
-            var playerText = FindViewById<TextView>(Resource.Id.CurrentPlayer);
+            //initialize current player
+            CurrentPlayer = "X";
             SetCurrentPlayerText();
+            var playerText = FindViewById<TextView>(Resource.Id.CurrentPlayer);
             playerText.SetTextSize(Android.Util.ComplexUnitType.Dip, GetDeviceWidth / 32);
         }
 
@@ -87,7 +88,7 @@ namespace TicTacToe
             }
         }
 
-        private string CurrentPlayer = "X";
+        private string CurrentPlayer { get; set; }
         private void ChangePlayer()
         {
             if (CurrentPlayer.Equals("X"))
