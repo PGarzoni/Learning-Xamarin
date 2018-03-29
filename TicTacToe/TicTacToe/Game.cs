@@ -47,7 +47,7 @@ namespace TicTacToe
 
             //initialize current player text
             var playerText = FindViewById<TextView>(Resource.Id.CurrentPlayer);
-            playerText.Text = "Current player: " + Player;
+            playerText.Text = String.Format(@"Current player: {0}", CurrentPlayer);
             playerText.SetTextSize(Android.Util.ComplexUnitType.Dip, GetDeviceWidth / 32);
         }
 
@@ -70,11 +70,11 @@ namespace TicTacToe
                 {
                     if (list.ElementAt(j).Text == "")
                     {
-                        list.ElementAt(j).Text = Player;
+                        list.ElementAt(j).Text = CurrentPlayer;
                         if (IsWinCondition(list))
                         {
                             ResetBoard(list);
-                            Toast.MakeText(this, "Player " + Player + " wins!", ToastLength.Long).Show();
+                            Toast.MakeText(this, String.Format("Player {0} wins!", CurrentPlayer), ToastLength.Long).Show();
                         }
                         else if (IsCatsGame(list))
                         {
@@ -87,18 +87,18 @@ namespace TicTacToe
             }
         }
 
-        private string Player = "X";
+        private string CurrentPlayer = "X";
         private void ChangePlayer()
         {
-            if (Player.Equals("X"))
+            if (CurrentPlayer.Equals("X"))
             {
-                Player = "O";
+                CurrentPlayer = "O";
             }
             else
             {
-                Player = "X";
+                CurrentPlayer = "X";
             }
-            FindViewById<TextView>(Resource.Id.CurrentPlayer).Text = "Current player: " + Player;
+            FindViewById<TextView>(Resource.Id.CurrentPlayer).Text = String.Format(@"Current player: {0}", CurrentPlayer);
         }
 
         private void ResetBoard(List<TextView> list)
