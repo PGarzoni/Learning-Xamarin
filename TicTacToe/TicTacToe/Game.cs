@@ -47,7 +47,7 @@ namespace TicTacToe
 
             //initialize current player text
             var playerText = FindViewById<TextView>(Resource.Id.CurrentPlayer);
-            playerText.Text = String.Format(@"Current player: {0}", CurrentPlayer);
+            SetCurrentPlayerText();
             playerText.SetTextSize(Android.Util.ComplexUnitType.Dip, GetDeviceWidth / 32);
         }
 
@@ -98,6 +98,11 @@ namespace TicTacToe
             {
                 CurrentPlayer = "X";
             }
+            SetCurrentPlayerText();
+        }
+
+        private void SetCurrentPlayerText()
+        {
             FindViewById<TextView>(Resource.Id.CurrentPlayer).Text = String.Format(@"Current player: {0}", CurrentPlayer);
         }
 
