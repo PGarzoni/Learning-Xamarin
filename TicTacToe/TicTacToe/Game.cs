@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace TicTacToe
 {
-    [Activity(Label = "Game")]
+    [Activity(Label = "Tic Tac Toe", MainLauncher = true, Icon = "@mipmap/icon")]
     public class Game : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -20,6 +20,7 @@ namespace TicTacToe
             RequestWindowFeature(WindowFeatures.NoTitle);
             Window.AddFlags(WindowManagerFlags.Fullscreen);
             Window.ClearFlags(WindowManagerFlags.ForceNotFullscreen);
+            RequestedOrientation = Android.Content.PM.ScreenOrientation.Portrait;
 
             base.OnCreate(savedInstanceState);
 
