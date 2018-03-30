@@ -120,60 +120,17 @@ namespace TicTacToe
             //0 1 2
             //3 4 5
             //6 7 8
-
-            //row1
-            if( !String.IsNullOrWhiteSpace(list.ElementAt(0).Text) &&
-                list.ElementAt(0).Text.Equals(list.ElementAt(1).Text) &&
-                list.ElementAt(1).Text.Equals(list.ElementAt(2).Text))
-            {
-                return true;
-            }
-            //row2
-            else if (!String.IsNullOrWhiteSpace(list.ElementAt(3).Text) &&
-                     list.ElementAt(3).Text.Equals(list.ElementAt(4).Text) &&
-                    list.ElementAt(4).Text.Equals(list.ElementAt(5).Text))
-            {
-                return true;
-            }
-            //row3
-            else if (!String.IsNullOrWhiteSpace(list.ElementAt(7).Text) &&
-                     list.ElementAt(6).Text.Equals(list.ElementAt(7).Text) &&
-                     list.ElementAt(7).Text.Equals(list.ElementAt(8).Text))
-            {
-                return true;
-            }
-            //column1
-            else if (!String.IsNullOrWhiteSpace(list.ElementAt(0).Text) &&
-                    list.ElementAt(0).Text.Equals(list.ElementAt(3).Text) &&
-                     list.ElementAt(3).Text.Equals(list.ElementAt(6).Text))
-            {
-                return true;
-            }
-            //column2
-            else if (!String.IsNullOrWhiteSpace(list.ElementAt(1).Text) &&
-                     list.ElementAt(1).Text.Equals(list.ElementAt(4).Text) &&
-                     list.ElementAt(4).Text.Equals(list.ElementAt(7).Text))
-            {
-                return true;
-            }
-            //column3
-            else if (!String.IsNullOrWhiteSpace(list.ElementAt(2).Text) &&
-                     list.ElementAt(2).Text.Equals(list.ElementAt(5).Text) &&
-                     list.ElementAt(5).Text.Equals(list.ElementAt(8).Text))
-            {
-                return true;
-            }
-            //diagonal1
-            else if (!String.IsNullOrWhiteSpace(list.ElementAt(0).Text) &&
-                     list.ElementAt(0).Text.Equals(list.ElementAt(4).Text) &&
-                     list.ElementAt(4).Text.Equals(list.ElementAt(8).Text))
-            {
-                return true;
-            }
-            //diagonal2
-            else if (!String.IsNullOrWhiteSpace(list.ElementAt(2).Text) &&
-                     list.ElementAt(2).Text.Equals(list.ElementAt(4).Text) &&
-                     list.ElementAt(4).Text.Equals(list.ElementAt(6).Text))
+            
+            if(
+                (!String.IsNullOrWhiteSpace(list.ElementAt(0).Text) && list.ElementAt(0).Text.Equals(list.ElementAt(1).Text) && list.ElementAt(1).Text.Equals(list.ElementAt(2).Text)) || //Row 1
+                (!String.IsNullOrWhiteSpace(list.ElementAt(3).Text) && list.ElementAt(3).Text.Equals(list.ElementAt(4).Text) && list.ElementAt(4).Text.Equals(list.ElementAt(5).Text)) || //Row 2
+                (!String.IsNullOrWhiteSpace(list.ElementAt(7).Text) && list.ElementAt(6).Text.Equals(list.ElementAt(7).Text) && list.ElementAt(7).Text.Equals(list.ElementAt(8).Text)) || //Row 3
+                (!String.IsNullOrWhiteSpace(list.ElementAt(0).Text) && list.ElementAt(0).Text.Equals(list.ElementAt(3).Text) && list.ElementAt(3).Text.Equals(list.ElementAt(6).Text)) || //Column 1
+                (!String.IsNullOrWhiteSpace(list.ElementAt(1).Text) && list.ElementAt(1).Text.Equals(list.ElementAt(4).Text) && list.ElementAt(4).Text.Equals(list.ElementAt(7).Text)) || //Column 2
+                (!String.IsNullOrWhiteSpace(list.ElementAt(2).Text) && list.ElementAt(2).Text.Equals(list.ElementAt(5).Text) && list.ElementAt(5).Text.Equals(list.ElementAt(8).Text)) || //Column 3
+                (!String.IsNullOrWhiteSpace(list.ElementAt(0).Text) && list.ElementAt(0).Text.Equals(list.ElementAt(4).Text) && list.ElementAt(4).Text.Equals(list.ElementAt(8).Text)) || //Diagonal 1
+                (!String.IsNullOrWhiteSpace(list.ElementAt(2).Text) && list.ElementAt(2).Text.Equals(list.ElementAt(4).Text) && list.ElementAt(4).Text.Equals(list.ElementAt(6).Text)) ////Diagonal 2
+            )
             {
                 return true;
             }
