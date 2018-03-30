@@ -48,8 +48,7 @@ namespace TicTacToe
             //initialize current player
             CurrentPlayer = "X";
             SetCurrentPlayerText();
-            var playerText = FindViewById<TextView>(Resource.Id.CurrentPlayer);
-            playerText.SetTextSize(Android.Util.ComplexUnitType.Dip, GetDeviceWidth / 32);
+            FindViewById<TextView>(Resource.Id.CurrentPlayer).SetTextSize(Android.Util.ComplexUnitType.Dip, GetDeviceWidth / 32);
         }
 
         private void InitializeBoard(List<TextView> list)
@@ -117,20 +116,14 @@ namespace TicTacToe
 
         private bool IsWinCondition(List<TextView> list)
         {
-            //0 1 2
-            //3 4 5
-            //6 7 8
-            
-            if(
-                (!String.IsNullOrWhiteSpace(list.ElementAt(0).Text) && list.ElementAt(0).Text.Equals(list.ElementAt(1).Text) && list.ElementAt(1).Text.Equals(list.ElementAt(2).Text)) || //Row 1
-                (!String.IsNullOrWhiteSpace(list.ElementAt(3).Text) && list.ElementAt(3).Text.Equals(list.ElementAt(4).Text) && list.ElementAt(4).Text.Equals(list.ElementAt(5).Text)) || //Row 2
-                (!String.IsNullOrWhiteSpace(list.ElementAt(7).Text) && list.ElementAt(6).Text.Equals(list.ElementAt(7).Text) && list.ElementAt(7).Text.Equals(list.ElementAt(8).Text)) || //Row 3
-                (!String.IsNullOrWhiteSpace(list.ElementAt(0).Text) && list.ElementAt(0).Text.Equals(list.ElementAt(3).Text) && list.ElementAt(3).Text.Equals(list.ElementAt(6).Text)) || //Column 1
-                (!String.IsNullOrWhiteSpace(list.ElementAt(1).Text) && list.ElementAt(1).Text.Equals(list.ElementAt(4).Text) && list.ElementAt(4).Text.Equals(list.ElementAt(7).Text)) || //Column 2
-                (!String.IsNullOrWhiteSpace(list.ElementAt(2).Text) && list.ElementAt(2).Text.Equals(list.ElementAt(5).Text) && list.ElementAt(5).Text.Equals(list.ElementAt(8).Text)) || //Column 3
-                (!String.IsNullOrWhiteSpace(list.ElementAt(0).Text) && list.ElementAt(0).Text.Equals(list.ElementAt(4).Text) && list.ElementAt(4).Text.Equals(list.ElementAt(8).Text)) || //Diagonal 1
-                (!String.IsNullOrWhiteSpace(list.ElementAt(2).Text) && list.ElementAt(2).Text.Equals(list.ElementAt(4).Text) && list.ElementAt(4).Text.Equals(list.ElementAt(6).Text)) ////Diagonal 2
-            )
+            if( (!String.IsNullOrEmpty(list.ElementAt(0).Text) && list.ElementAt(0).Text.Equals(list.ElementAt(1).Text) && list.ElementAt(1).Text.Equals(list.ElementAt(2).Text)) || //Row 1
+                (!String.IsNullOrEmpty(list.ElementAt(3).Text) && list.ElementAt(3).Text.Equals(list.ElementAt(4).Text) && list.ElementAt(4).Text.Equals(list.ElementAt(5).Text)) || //Row 2
+                (!String.IsNullOrEmpty(list.ElementAt(7).Text) && list.ElementAt(6).Text.Equals(list.ElementAt(7).Text) && list.ElementAt(7).Text.Equals(list.ElementAt(8).Text)) || //Row 3
+                (!String.IsNullOrEmpty(list.ElementAt(0).Text) && list.ElementAt(0).Text.Equals(list.ElementAt(3).Text) && list.ElementAt(3).Text.Equals(list.ElementAt(6).Text)) || //Column 1
+                (!String.IsNullOrEmpty(list.ElementAt(1).Text) && list.ElementAt(1).Text.Equals(list.ElementAt(4).Text) && list.ElementAt(4).Text.Equals(list.ElementAt(7).Text)) || //Column 2
+                (!String.IsNullOrEmpty(list.ElementAt(2).Text) && list.ElementAt(2).Text.Equals(list.ElementAt(5).Text) && list.ElementAt(5).Text.Equals(list.ElementAt(8).Text)) || //Column 3
+                (!String.IsNullOrEmpty(list.ElementAt(0).Text) && list.ElementAt(0).Text.Equals(list.ElementAt(4).Text) && list.ElementAt(4).Text.Equals(list.ElementAt(8).Text)) || //Diagonal 1
+                (!String.IsNullOrEmpty(list.ElementAt(2).Text) && list.ElementAt(2).Text.Equals(list.ElementAt(4).Text) && list.ElementAt(4).Text.Equals(list.ElementAt(6).Text)))   //Diagonal 2
             {
                 return true;
             }
