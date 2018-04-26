@@ -43,6 +43,7 @@ namespace TicTacToe
                 FindViewById<TextView>(Resource.Id.r3c2),
                 FindViewById<TextView>(Resource.Id.r3c3)
             };
+
             InitializeBoard(board);
 
             //initialize current player
@@ -53,7 +54,9 @@ namespace TicTacToe
 
         private void InitializeBoard(List<TextView> list)
         {
-            for(var i = 0; i < list.Count; i++)
+            Board board = new Board(3);
+
+            for (var i = 0; i < list.Count; i++)
             {
                 var CellSize = (GetDeviceWidth / 3) - 20;
                 list.ElementAt(i).LayoutParameters.Width = CellSize;
@@ -64,21 +67,23 @@ namespace TicTacToe
 
                 list.ElementAt(i).SetTextSize(Android.Util.ComplexUnitType.FractionParent, 100);
 
-
                 var j = i;
                 list.ElementAt(i).Click += delegate
                 {
                     if (list.ElementAt(j).Text == "")
                     {
                         list.ElementAt(j).Text = CurrentPlayer;
-                        if (IsWinCondition(list))
+                        board.SetTokenAtLocation(j, CurrentPlayer);
+                        if (board.DetectWinCondition())
                         {
-                            ResetBoard(list);
+                            board.ResetBoard();
+                            ClearBoard(list);
                             Toast.MakeText(this, String.Format("Player {0} wins!", CurrentPlayer), ToastLength.Long).Show();
                         }
-                        else if (IsCatsGame(list))
+                        if(board.IsAllElementsFilled())
                         {
-                            ResetBoard(list);
+                            board.ResetBoard();
+                            ClearBoard(list);
                             Toast.MakeText(this, "Cats Game!", ToastLength.Long).Show();
                         }
                         ChangePlayer();
@@ -106,43 +111,12 @@ namespace TicTacToe
             FindViewById<TextView>(Resource.Id.CurrentPlayer).Text = String.Format(@"Current player: {0}", CurrentPlayer);
         }
 
-        private void ResetBoard(List<TextView> list)
+        private void ClearBoard(List<TextView> list)
         {
             foreach (TextView tv in list)
             {
                 tv.Text = "";
             }
-        }
-
-        private bool IsWinCondition(List<TextView> list)
-        {
-            if( (!String.IsNullOrEmpty(list.ElementAt(0).Text) && list.ElementAt(0).Text.Equals(list.ElementAt(1).Text) && list.ElementAt(1).Text.Equals(list.ElementAt(2).Text)) || //Row 1
-                (!String.IsNullOrEmpty(list.ElementAt(3).Text) && list.ElementAt(3).Text.Equals(list.ElementAt(4).Text) && list.ElementAt(4).Text.Equals(list.ElementAt(5).Text)) || //Row 2
-                (!String.IsNullOrEmpty(list.ElementAt(7).Text) && list.ElementAt(6).Text.Equals(list.ElementAt(7).Text) && list.ElementAt(7).Text.Equals(list.ElementAt(8).Text)) || //Row 3
-                (!String.IsNullOrEmpty(list.ElementAt(0).Text) && list.ElementAt(0).Text.Equals(list.ElementAt(3).Text) && list.ElementAt(3).Text.Equals(list.ElementAt(6).Text)) || //Column 1
-                (!String.IsNullOrEmpty(list.ElementAt(1).Text) && list.ElementAt(1).Text.Equals(list.ElementAt(4).Text) && list.ElementAt(4).Text.Equals(list.ElementAt(7).Text)) || //Column 2
-                (!String.IsNullOrEmpty(list.ElementAt(2).Text) && list.ElementAt(2).Text.Equals(list.ElementAt(5).Text) && list.ElementAt(5).Text.Equals(list.ElementAt(8).Text)) || //Column 3
-                (!String.IsNullOrEmpty(list.ElementAt(0).Text) && list.ElementAt(0).Text.Equals(list.ElementAt(4).Text) && list.ElementAt(4).Text.Equals(list.ElementAt(8).Text)) || //Diagonal 1
-                (!String.IsNullOrEmpty(list.ElementAt(2).Text) && list.ElementAt(2).Text.Equals(list.ElementAt(4).Text) && list.ElementAt(4).Text.Equals(list.ElementAt(6).Text)))   //Diagonal 2
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        private bool IsCatsGame(List<TextView> list)
-        {
-            foreach(TextView tv in list)
-            {
-                if (String.IsNullOrEmpty(tv.Text))
-                {
-                    return false;
-                }
-            }
-            return true;
         }
 
         private int GetDeviceWidth
