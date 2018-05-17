@@ -53,35 +53,17 @@ namespace TicTacToe
         /// Sets the desired token based on the index converted to the row and column position
         /// </summary>
         /// <param name="Index"></param>
-        /// <param name="token"></param>
-        public void SetTokenAtLocation(int Index, object token)
+        /// <param name="Token"></param>
+        public void SetTokenAtLocation(int Index, object Token)
         {
-            bool escape = false;
-            int count = 0;
-            for (int row = 0; row < rowCount; row++)
-            {
-                for (int col = 0; col < columnCount; col++)
-                {
-                    if (count == Index)
-                    {
-                        if (matrix[row][col] == null)
-                        {
-                            matrix[row][col] = token;
-                            escape = true;
-                            break;
-                        }
-                    }
-                    else
-                    {
-                        count++;
-                    }
-                }
-                if (escape)
-                {
-                    break;
-                }
-            }
+            // Matrix index sample:
+            // 0 1 2
+            // 3 4 5
+            // 6 7 8
 
+            int row = Index / columnCount;
+            int col = Index - (row * columnCount);
+            matrix[row][col] = Token;
         }
 
         /// <summary>
