@@ -44,18 +44,22 @@ namespace TicTacToe
                 FindViewById<TextView>(Resource.Id.r3c3)
             };
 
-            InitializeBoard(board);
+            //initialize players
+            PlayerManager pm = new PlayerManager();
+            pm.AddPlayer("X");
+            pm.AddPlayer("O");
 
-            //initialize current player
-            CurrentPlayer = "X";
-            SetCurrentPlayerText();
+            // set initial current player display text and font size
+            SetCurrentPlayerText(pm.CurrentPlayer().PlayerToken.ToString());
             FindViewById<TextView>(Resource.Id.CurrentPlayer).SetTextSize(Android.Util.ComplexUnitType.Dip, GetDeviceWidth / 32);
+
+            InitializeGame(board, pm);            
         }
 
-        private void InitializeBoard(List<TextView> list)
+        private void InitializeGame(List<TextView> list, PlayerManager pm)
         {
-            Board board = new Board(3);
-
+            Board board = new Board(3); // 3x3 game board, requiring 3 in a row to win
+            
             for (var i = 0; i < list.Count; i++)
             {
                 var CellSize = (GetDeviceWidth / 3) - 20;
@@ -72,43 +76,35 @@ namespace TicTacToe
                 {
                     if (list.ElementAt(j).Text == "")
                     {
-                        list.ElementAt(j).Text = CurrentPlayer;
-                        board.SetTokenAtLocation(j, CurrentPlayer);
-                        if (board.DetectWinCondition())
+                        string playerToken = pm.CurrentPlayer().PlayerToken.ToString();
+                        pm.CurrentPlayer().EndTurn();
+
+                        list.ElementAt(j).Text = playerToken;                        
+                        board.SetTokenAtLocation(j, playerToken);
+
+                        if (board.DetectWinCondition()) // win condition detection
                         {
                             board.ResetBoard();
                             ClearBoard(list);
-                            Toast.MakeText(this, String.Format("Player {0} wins!", CurrentPlayer), ToastLength.Long).Show();
+                            Toast.MakeText(this, String.Format("Player {0} wins!", playerToken), ToastLength.Long).Show();
                         }
-                        if(board.IsAllElementsFilled())
+                        else if(board.IsAllElementsFilled()) // cats game detection
                         {
                             board.ResetBoard();
                             ClearBoard(list);
                             Toast.MakeText(this, "Cats Game!", ToastLength.Long).Show();
                         }
-                        ChangePlayer();
+
+                        // update display to the new current player
+                        SetCurrentPlayerText(pm.CurrentPlayer().PlayerToken.ToString());
                     }
                 };
             }
         }
 
-        private string CurrentPlayer { get; set; }
-        private void ChangePlayer()
+        private void SetCurrentPlayerText(string text)
         {
-            if (CurrentPlayer.Equals("X"))
-            {
-                CurrentPlayer = "O";
-            }
-            else
-            {
-                CurrentPlayer = "X";
-            }
-            SetCurrentPlayerText();
-        }
-
-        private void SetCurrentPlayerText()
-        {
-            FindViewById<TextView>(Resource.Id.CurrentPlayer).Text = String.Format(@"Current player: {0}", CurrentPlayer);
+            FindViewById<TextView>(Resource.Id.CurrentPlayer).Text = String.Format(@"Current player: {0}", text);
         }
 
         private void ClearBoard(List<TextView> list)

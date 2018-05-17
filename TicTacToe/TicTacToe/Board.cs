@@ -135,6 +135,11 @@ namespace TicTacToe
             return RowWinCondition() || ColumnWinCondition() || PrimaryDiagonalWinCondition() || SecondaryDiagonalWinCondition();
         }
 
+        /// <summary>
+        /// Returns true whenever a matching set is found
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
         private bool TestForWinCondition(List<object> list)
         {
             if (list.Count >= requiredToWin) // if list count is less than the requirement, win condition can never be met
@@ -174,7 +179,7 @@ namespace TicTacToe
         }
 
         /// <summary>
-        /// Detects win conditions for the rows of the matrix
+        /// Detects win conditions for the rows of a matrix
         /// </summary>
         /// <returns></returns>
         private bool RowWinCondition()
@@ -205,7 +210,7 @@ namespace TicTacToe
         }
 
         /// <summary>
-        /// Detects win conditions for the columns of the matrix
+        /// Detects win conditions for the columns of a matrix
         /// </summary>
         /// <returns></returns>
         private bool ColumnWinCondition()
@@ -236,7 +241,7 @@ namespace TicTacToe
         }
 
         /// <summary>
-        /// Detects win conditions for '\' diagonals of the matrix
+        /// Detects win conditions for '\' diagonals of a matrix
         /// </summary>
         /// <returns></returns>
         private bool PrimaryDiagonalWinCondition()
@@ -300,7 +305,7 @@ namespace TicTacToe
                     }
                     else
                     {
-                        colStart--; // adjust row starting position for next loop
+                        colStart--; // adjust col starting position for next loop
                         break; // escape loop
                     }
                 }
@@ -314,7 +319,7 @@ namespace TicTacToe
         }
 
         /// <summary>
-        /// Detects win conditions for '/' diagonals of the matrix
+        /// Detects win conditions for '/' diagonals of a matrix
         /// </summary>
         /// <returns></returns>
         private bool SecondaryDiagonalWinCondition()
@@ -378,7 +383,7 @@ namespace TicTacToe
                     }
                     else
                     {
-                        colStart++; // adjust row starting position for next loop
+                        colStart++; // adjust col starting position for next loop
                         break; // escape loop
                     }
                 }
