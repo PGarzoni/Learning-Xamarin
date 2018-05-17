@@ -178,11 +178,11 @@ namespace TicTacToe
 
             while (row < rowCount)
             {
-                list.Clear();
-                //populate list with row data
+                list.Clear(); // if list count is less than the requirement, win condition can never be met
+
                 for (int col = 0; col < columnCount; col++)
                 {
-                    list.Add(matrix[row][col]);
+                    list.Add(matrix[row][col]); // populate list with row data
                 }
 
                 // detect if win condition is met
@@ -209,11 +209,11 @@ namespace TicTacToe
 
             while (col < columnCount)
             {
-                list.Clear();
-                // populate list with column data
+                list.Clear(); // if list count is less than the requirement, win condition can never be met
+                
                 for (int row = 0; row < rowCount; row++)
                 {
-                    list.Add(matrix[row][col]);
+                    list.Add(matrix[row][col]); // populate list with column data
                 }
 
                 // detect if win condition is met
