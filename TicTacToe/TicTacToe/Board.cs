@@ -11,7 +11,6 @@ namespace TicTacToe
         /// Initializes and creates a square game board for row and column. In addition the requirement to win is set to the same value.
         /// </summary>
         /// <param name="BoardSize"></param>
-        /// <param name="RequirementToWin"></param>
         public Board(int BoardSize)
         {
             rowCount = BoardSize;
@@ -26,7 +25,7 @@ namespace TicTacToe
         /// </summary>
         /// <param name="Row"></param>
         /// <param name="Column"></param>
-        /// <param name="RequirementToWin"></param>
+        /// <param name="requiredToWin"></param>
         public Board(int Row, int Column, int requiredToWin)
         {
             rowCount = Row;
@@ -41,21 +40,20 @@ namespace TicTacToe
         /// </summary>
         /// <param name="Row"></param>
         /// <param name="Column"></param>
-        /// <param name="Mark"></param>
-        public void SetTokenAtLocation(int Row, int Column, object token)
+        /// <param name="Token"></param>
+        public void SetTokenAtLocation(int Row, int Column, object Token)
         {
             if (matrix[Row][Column] == null)
             {
-                matrix[Row][Column] = token;
+                matrix[Row][Column] = Token;
             }
         }
 
         /// <summary>
         /// Sets the desired token based on the index converted to the row and column position
         /// </summary>
-        /// <param name="Row"></param>
-        /// <param name="Column"></param>
-        /// <param name="Mark"></param>
+        /// <param name="Index"></param>
+        /// <param name="token"></param>
         public void SetTokenAtLocation(int Index, object token)
         {
             bool escape = false;
@@ -86,6 +84,9 @@ namespace TicTacToe
 
         }
 
+        /// <summary>
+        /// Creates matrix by adding null elements to each position
+        /// </summary>
         private void InitializeBoard()
         {
             for (int row = 0; row < rowCount; row++)
@@ -99,6 +100,9 @@ namespace TicTacToe
             }
         }
 
+        /// <summary>
+        /// Sets all elements to null
+        /// </summary>
         public void ResetBoard()
         {
             for(int row = 0; row < matrix.Count; row++)
@@ -110,26 +114,29 @@ namespace TicTacToe
             }
         }
 
+        /// <summary>
+        /// Returns true is all elements in the matrix are filled
+        /// </summary>
+        /// <returns></returns>
         public bool IsAllElementsFilled()
         {
-            bool flag = false;
             for (int row = 0; row < matrix.Count; row++)
             {
                 for (int col = 0; col < matrix[row].Count; col++)
                 {
-                    if(matrix[row][col] != null)
-                    {
-                        flag = true;
-                    }
-                    else
+                    if(matrix[row][col] == null)
                     {
                         return false;
                     }
                 }
             }
-            return flag;
+            return true;
         }
 
+        /// <summary>
+        /// Checks all rows, columns, primary and secondary diagonals
+        /// </summary>
+        /// <returns></returns>
         public bool DetectWinCondition()
         {
             return RowWinCondition() || ColumnWinCondition() || PrimaryDiagonalWinCondition() || SecondaryDiagonalWinCondition();
@@ -250,9 +257,17 @@ namespace TicTacToe
             int rowStart = 0;
             int colStart = columnCount - 1;
 
+            /* Scans diagonally down towards the right from the starting position which is the first element in every row. 
+             * See pattern below 'x' marks what is scanned:
+             * x _ _ _ _
+             * x x _ _ _
+             * x x x _ _
+             * x x x x _
+             * x x x x x
+            */
             while (rowStart < rowCount)
             {
-                list.Clear();
+                list.Clear(); // empty list to avoid an unrealistic win condition
 
                 int col = colStart;
                 for (int row = rowStart; row >= 0; row--)
@@ -272,7 +287,7 @@ namespace TicTacToe
                     else
                     {
                         rowStart++; // adjust row starting position for next loop
-                        break; // escape loop
+                        break; // escape for loop
                     }
                 }
 
@@ -282,11 +297,19 @@ namespace TicTacToe
                 }
             }
 
+            /* Scans diagonally down towards the right from the starting position which is every element in the first row skipping the first element's diagonal as it is already scanned.
+             * See pattern below 'x' marks what is scanned:
+             * _ x x x x
+             * _ _ x x x
+             * _ _ _ x x
+             * _ _ _ _ x
+             * _ _ _ _ _
+            */
             rowStart = rowCount - 1;
             colStart = columnCount - 2;
             while (colStart >= 0)
             {
-                list.Clear();
+                list.Clear(); // empty list to avoid an unrealistic win condition
 
                 int row = rowStart;
                 for (int col = colStart; col >= 0; col--)
@@ -306,7 +329,7 @@ namespace TicTacToe
                     else
                     {
                         colStart--; // adjust col starting position for next loop
-                        break; // escape loop
+                        break; // escape for loop
                     }
                 }
 
@@ -328,9 +351,17 @@ namespace TicTacToe
             int rowStart = 0;
             int colStart = 0;
 
+            /* Scans diagonally up towards the right from the starting position which is the first element in every row. 
+             * See pattern below 'x' marks what is scanned:
+             * x x x x x
+             * x x x x _
+             * x x x _ _
+             * x x _ _ _
+             * x _ _ _ _
+            */
             while (rowStart < rowCount)
             {
-                list.Clear();
+                list.Clear(); // empty list to avoid an unrealistic win condition
 
                 int col = colStart;
                 for (int row = rowStart; row >= 0; row--)
@@ -350,7 +381,7 @@ namespace TicTacToe
                     else
                     {
                         rowStart++; // adjust row starting position for next loop
-                        break; // escape loop
+                        break; // escape for loop
                     }
                 }
 
@@ -360,11 +391,19 @@ namespace TicTacToe
                 }
             }
 
+            /* Scans diagonally up towards the right from the starting position which is every element in the bottom row skipping the first element's diagonal as it is already scanned.
+             * See pattern below 'x' marks what is scanned:
+             * _ _ _ _ _
+             * _ _ _ _ x
+             * _ _ _ x x
+             * _ _ x x x
+             * _ x x x x
+            */
             rowStart = rowCount - 1;
             colStart = 1;
             while (colStart < columnCount)
             {
-                list.Clear();
+                list.Clear(); // empty list to avoid an unrealistic win condition
 
                 int row = rowStart;
                 for (int col = colStart; col < columnCount; col++)
@@ -384,7 +423,7 @@ namespace TicTacToe
                     else
                     {
                         colStart++; // adjust col starting position for next loop
-                        break; // escape loop
+                        break; // escape for loop
                     }
                 }
 
